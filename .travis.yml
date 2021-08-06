@@ -4,11 +4,11 @@ services:
   - docker
 
 before_install:
-  - docker build -t KOPFYF/docker-react -f Dockerfile.dev .
+  - docker build -t kopfyf/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true KOPFYF/docker-react npm run test
-  # - docker run KOPFYF/docker-react npm run test -- --coverage
+  - docker run -e CI=true kopfyf/docker-react npm run test
+  # - docker run kopfyf/docker-react npm run test -- --coverage
 
 deploy:
   provider: elasticbeanstalk
